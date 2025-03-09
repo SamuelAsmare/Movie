@@ -15,7 +15,10 @@ body{
     width:200px;
     margin: 10px;
     margin-top: 50px;
-    border: black solid 2px;
+    border-top: black solid 2px;
+    border-right: rgb(182, 147, 246) solid 2px;
+    border-left: black solid 2px;
+    border-bottom: rgb(189, 114, 255) solid 2px;
     height: 300px;
     padding: 10px;
     display: flex;
