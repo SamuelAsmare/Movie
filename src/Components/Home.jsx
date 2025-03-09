@@ -69,7 +69,9 @@ const gotodetails=()=>{
     }}>
       <h1 style={{
         textAlign: "center",
-        fontSize: "35px",
+        fontSize: "30px",
+        fontWeight: "bold",
+        fontFamily: "Montserrat', sans-serif",
         color: "white",
         marginTop: "50px",
         marginBottom: "50px"
