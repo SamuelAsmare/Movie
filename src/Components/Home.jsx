@@ -101,7 +101,7 @@ const gotodetails=()=>{
               <h1 style={{
                 margin :"0px",
                 fontSize: "20px",
-                color: "Green",
+                color: "white",
                 fontWeight: "bold"
               }}
               >{movies.Title}</h1>
