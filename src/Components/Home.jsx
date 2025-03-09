@@ -1,6 +1,8 @@
 import {useState} from "react"
 import { useNavigate } from "react-router-dom";
 const  Search=() =>{
+   
+
     const [title ,setTititle]=useState('');
     const[output,setoutput] = useState([]);
     const navigate = useNavigate();
@@ -8,24 +10,49 @@ const  Search=() =>{
     const handleTitleChange = (e) => {
       setTititle(e.target.value);
     }
-   const getinfo= async () => {
+
+    
+    const getinfo= async () => {
+     document.getElementById("loaderdiv").style.display="block";
+     document.getElementById("moviesdiv").style.display="none";
+     document.getElementById("Moviesfinder").style.display="none";
+     document.getElementById("searchbar").style.display="none";
+   document.getElementById("tittle").value="";
     try{
      if(title===""){
          alert("Please enter a movie title");
-         return;
+         window.location.reload();
      }
          const info= await fetch(`https://www.omdbapi.com/?s=${title}&apikey=f629ca98`);
          const thewholedata= await info.json();
          setoutput(thewholedata.Search);
+         document.getElementById("loaderdiv").style.display="none";
+         document.getElementById("moviesdiv").style.display="flex";
+     document.getElementById("Moviesfinder").style.display="block";
+     document.getElementById("searchbar").style.display="flex";
+
+if(thewholedata.Response==="False"){
+    alert("Movie Not Found");
+    window.location.reload();
    }
+   }
+   
    catch(error){
-     setoutput(["Error"]);
-   }}
+    
+    alert("Movie Not Found");
+    window.location.reload();
+      document.getElementById("loaderdiv").style.display="none";
+  
+      document.getElementById("Moviesfinder").style.display="block";
+      document.getElementById("searchbar").style.display="flex";
+
+   }
+    }
 const eventHandler= (sam) =>{
     if(sam.key==="Enter"){
       getinfo();
      setTititle(""); 
-    }
+    }9
 }
 const gotodetails=()=>{
   navigate('Details');
@@ -33,6 +60,7 @@ const gotodetails=()=>{
 
   
   return (
+    
     
     <div 
     style={{
@@ -46,26 +74,33 @@ const gotodetails=()=>{
         marginTop: "50px",
         marginBottom: "50px"
   
-      }}>Movie Finder</h1>
+      }} id="Moviesfinder"> Fast Movie Finder App</h1>
       <div id="searchbar">
       <input type="text" id="tittle" 
       onKeyDown={eventHandler}
-      placeholder ="Enter Movie the tittle" onChange={handleTitleChange}>
+      placeholder ="Enter movie the title" onChange={handleTitleChange}>
       </input>
       <button onClick={getinfo} id="button"
         >Search
 
       </button>
         </div>
+        <div 
+        >
+          <span class="loader" id="loaderdiv"></span>
+        </div>
+        
       <div id="moviesdiv">
         {
           output.map((movies)=>{
             return (<div key={movies.imdbID} id="eachmovie"
-            onClick={gotodetails}>
+            // onClick={gotodetails}
+            >
               <h1 style={{
                 margin :"0px",
-                fontSize: "17px",
-                color: "white"
+                fontSize: "20px",
+                color: "Green",
+                fontWeight: "bold"
               }}
               >{movies.Title}</h1>
               <h2 

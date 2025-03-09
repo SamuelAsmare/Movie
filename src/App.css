@@ -7,6 +7,7 @@ body{
     flex-wrap: wrap;
     align-items: center;
     gap:10px;
+
     
 }
 #eachmovie{
@@ -14,7 +15,7 @@ body{
     width:200px;
     margin: 10px;
     margin-top: 50px;
-    
+    border: black solid 2px;
     height: 300px;
     padding: 10px;
     display: flex;
@@ -80,7 +81,16 @@ body{
     cursor: pointer;
     color:white;
 }
+#Moviesfinder{
+    position:sticky;
+    z-index:10;
+    top:10px;
+
+}
 #searchbar{
+    position: sticky;
+    top:60px;
+    z-index:10;
     display: flex;
     justify-content: center;
 }
@@ -91,3 +101,42 @@ body{
      color:blue;
 
 }
+
+
+.loader {
+position: absolute;
+top:40%;
+    right:50%;
+    height: 100vh;
+    z-index: 1000;
+    display: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  
+  border-top: 4px solid #FFF;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border-left: 4px solid #FF3D00;
+  border-bottom: 4px solid transparent;
+  animation: rotation 0.5s linear infinite reverse;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
