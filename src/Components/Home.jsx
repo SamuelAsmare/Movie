@@ -80,7 +80,7 @@ const gotodetails=()=>{
       <div id="searchbar">
       <input type="text" id="tittle" 
       onKeyDown={eventHandler}
-      placeholder ="Enter movie the title" onChange={handleTitleChange}>
+      placeholder ="Enter the movie  title" onChange={handleTitleChange}>
       </input>
       <button onClick={getinfo} id="button"
         >Search
