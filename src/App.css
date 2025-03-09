@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap');
+
 body{
     background-color:black;
 }
@@ -108,7 +110,7 @@ body{
 
 .loader {
 position: absolute;
-top:40%;
+top:30%;
     right:50%;
     height: 100vh;
     z-index: 1000;

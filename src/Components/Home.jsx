@@ -102,6 +102,7 @@ const gotodetails=()=>{
                 margin :"0px",
                 fontSize: "20px",
                 color: "white",
+              fontFamily: "'Emily's Candy', cursive",
                 fontWeight: "bold"
               }}
               >{movies.Title}</h1>
