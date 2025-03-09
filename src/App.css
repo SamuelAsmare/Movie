@@ -10,7 +10,7 @@ body{
     
 }
 #eachmovie{
-    border:rgb(34, 225, 246) solid 2px;
+    
     width:200px;
     margin: 10px;
     margin-top: 50px;
@@ -86,7 +86,7 @@ body{
 }
 #eachmovie:hover{
     transform: scale(1.05);
-    box-shadow: 1px 1px 20px 1px white;
+
      border:rgb(66, 246, 34) solid 2px;
      color:blue;
 
